@@ -39,7 +39,7 @@ public class CommandDefault {
                 builder.setAuthor(user.getName(), null, user.getAvatarUrl()+"?size=256");
                 builder.setTitle("informations");
                 builder.setDescription("[>](1)le message a été envoyé depuis le channel "+channel.getName());
-                builder.setColor(Color.yellow);
+                builder.setColor(Color.blue);
 
                 channel.sendMessage(builder.build()).queue();
             }
