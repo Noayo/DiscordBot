@@ -3,11 +3,9 @@ package me.noayo.discordbot.myCommands;
 import me.noayo.discordbot.command.Command;
 import me.noayo.discordbot.DiscordBot;
 import net.dv8tion.jda.core.EmbedBuilder;
+import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.Permission;
-import net.dv8tion.jda.core.entities.Message;
-import net.dv8tion.jda.core.entities.MessageChannel;
-import net.dv8tion.jda.core.entities.TextChannel;
-import net.dv8tion.jda.core.entities.User;
+import net.dv8tion.jda.core.entities.*;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -35,7 +33,7 @@ public class CommandDefault {
             if (textChannel.getGuild().getSelfMember().hasPermission(Permission.MESSAGE_EMBED_LINKS)) {
                 EmbedBuilder builder = new EmbedBuilder();
                 builder.setThumbnail(user.getAvatarUrl());
-                builder.setTitle("informations sur le serveur");
+                builder.setTitle("informations sur le serveur", null);
                 builder.setDescription("Le message a été envoyé depuis le channel "+channel.getName());
                 builder.addField("Informations sur le joueur","le compte a été créé le : " , true);
                 builder.setTimestamp(user.getCreationTime());
@@ -52,12 +50,12 @@ public class CommandDefault {
             textChannel = (TextChannel) channel;
             if (textChannel.getGuild().getSelfMember().hasPermission(Permission.MESSAGE_EMBED_LINKS)) {
                 EmbedBuilder builder = new EmbedBuilder();
-                builder.setTitle("info");
+                builder.setTitle("info", null);
                 builder.setDescription("donne des information sur vous et le serveur");
                 builder.addField("yop","dit 'yop'" , true);
                 builder.addField("@bots math","pour l utiliser : mettre '@bots math #'un nombre' 'un nombre''+, - ou /''un nombre' " , true);
                 builder.setTimestamp(user.getCreationTime());
-                builder.setColor(Color.yellow);
+                builder.setColor(Color.pink);
 
                 channel.sendMessage(builder.build()).queue();
             }

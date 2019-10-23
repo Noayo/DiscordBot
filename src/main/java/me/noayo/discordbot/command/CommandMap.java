@@ -2,7 +2,9 @@ package me.noayo.discordbot.command;
 
 
 import me.noayo.discordbot.DiscordBot;
+import me.noayo.discordbot.music.MusicCommand;
 import me.noayo.discordbot.myCommands.CommandDefault;
+import me.noayo.discordbot.myCommands.HelpCommand;
 import net.dv8tion.jda.core.JDA;
 
 import java.lang.reflect.Method;
@@ -24,7 +26,7 @@ public final class CommandMap {
      public CommandMap(DiscordBot discordBot) {
          this.discordBot = discordBot;
 
-         registerCommand(new CommandDefault(discordBot));
+         registerCommands(new CommandDefault(discordBot), new HelpCommand(this), new MusicCommand());
 
      }
     public static String getTag() {
@@ -94,7 +96,7 @@ public final class CommandMap {
             else if(parameters[i].getType() == String.class) objects[i] = command;
             else if(parameters[i].getType() == Message.class) objects[i] = message;
             else if(parameters[i].getType() == JDA.class) objects[i] = discordBot.getJda();
-            else if(parameters[i].getType() == MessageChannel.class) objects[i] = message.getChannel();
+            else if(parameters[i].getType() == MessageChannel.class) objects[i] = message == null ? null : message.getChannel();
         }
         simpleCommand.getMethod().invoke(simpleCommand.getObject(), objects);
     }

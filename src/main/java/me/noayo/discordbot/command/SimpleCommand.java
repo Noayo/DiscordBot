@@ -35,5 +35,9 @@ public final class SimpleCommand {
     public Object getObject() {
         return object;
     }
+
+    public String getDescription() {
+        return description;
+    }
 }
 
