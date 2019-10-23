@@ -36,8 +36,26 @@ public class CommandDefault {
                 EmbedBuilder builder = new EmbedBuilder();
                 builder.setThumbnail(user.getAvatarUrl());
                 builder.setTitle("informations sur le serveur");
-                builder.setDescription("[==> ](1)Le message a été envoyé depuis le channel "+channel.getName());
+                builder.setDescription("Le message a été envoyé depuis le channel "+channel.getName());
                 builder.addField("Informations sur le joueur","le compte a été créé le : " , true);
+                builder.setTimestamp(user.getCreationTime());
+                builder.setColor(Color.yellow);
+
+                channel.sendMessage(builder.build()).queue();
+            }
+        }
+    }
+    @Command(name = "commandes", type = Command.ExecutorType.USER)
+    private void commandes(User user, MessageChannel channel) {
+        if (channel instanceof TextChannel) {
+            TextChannel textChannel;
+            textChannel = (TextChannel) channel;
+            if (textChannel.getGuild().getSelfMember().hasPermission(Permission.MESSAGE_EMBED_LINKS)) {
+                EmbedBuilder builder = new EmbedBuilder();
+                builder.setTitle("info");
+                builder.setDescription("donne des information sur vous et le serveur");
+                builder.addField("yop","dit 'yop'" , true);
+                builder.addField("@bots math","pour l utiliser : mettre '@bots math #'un nombre' 'un nombre''+, - ou /''un nombre' " , true);
                 builder.setTimestamp(user.getCreationTime());
                 builder.setColor(Color.yellow);
 
