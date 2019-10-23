@@ -1,7 +1,6 @@
-package me.yoann56100.discordbot.event;
+package me.noayo.discordbot.event;
 
-import me.yoann56100.discordbot.command.CommandMap;
-import net.dv8tion.jda.core.entities.MessageChannel;
+import me.noayo.discordbot.command.CommandMap;
 import net.dv8tion.jda.core.entities.Role;
 import net.dv8tion.jda.core.events.Event;
 import net.dv8tion.jda.core.events.message.MessageReceivedEvent;

@@ -1,8 +1,8 @@
-package me.yoann56100.discordbot.command;
+package me.noayo.discordbot.command;
 
 
-import me.yoann56100.discordbot.DiscordBot;
-import me.yoann56100.discordbot.myCommands.CommandDefault;
+import me.noayo.discordbot.DiscordBot;
+import me.noayo.discordbot.myCommands.CommandDefault;
 import net.dv8tion.jda.core.JDA;
 
 import java.lang.reflect.Method;

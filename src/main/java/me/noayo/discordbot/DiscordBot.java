@@ -1,9 +1,7 @@
-package me.yoann56100.discordbot;
+package me.noayo.discordbot;
 
-import me.yoann56100.discordbot.command.Calculatrice;
-import me.yoann56100.discordbot.command.Command;
-import me.yoann56100.discordbot.command.CommandMap;
-import me.yoann56100.discordbot.event.BotListener;
+import me.noayo.discordbot.command.CommandMap;
+import me.noayo.discordbot.event.BotListener;
 import net.dv8tion.jda.core.AccountType;
 import net.dv8tion.jda.core.JDA;
 import net.dv8tion.jda.core.JDABuilder;

@@ -1,8 +1,7 @@
-package me.yoann56100.discordbot.myCommands;
+package me.noayo.discordbot.myCommands;
 
-import me.yoann56100.discordbot.DiscordBot;
-import me.yoann56100.discordbot.command.Calculatrice;
-import me.yoann56100.discordbot.command.Command;
+import me.noayo.discordbot.command.Command;
+import me.noayo.discordbot.DiscordBot;
 import net.dv8tion.jda.core.EmbedBuilder;
 import net.dv8tion.jda.core.Permission;
 import net.dv8tion.jda.core.entities.Message;
@@ -13,7 +12,6 @@ import net.dv8tion.jda.core.entities.User;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Date;
 
 public class CommandDefault {
 
@@ -36,9 +34,11 @@ public class CommandDefault {
             textChannel = (TextChannel) channel;
             if (textChannel.getGuild().getSelfMember().hasPermission(Permission.MESSAGE_EMBED_LINKS)) {
                 EmbedBuilder builder = new EmbedBuilder();
-                builder.setAuthor(user.getName(), null, user.getAvatarUrl()+"?size=256");
-                builder.setTitle("informations");
-                builder.setDescription("[>](1)le message a été envoyé depuis le channel "+channel.getName());
+                builder.setThumbnail(user.getAvatarUrl());
+                builder.setTitle("informations sur le serveur");
+                builder.setDescription("[==> ](1)Le message a été envoyé depuis le channel "+channel.getName());
+                builder.addField("Informations sur le joueur","le compte a été créé le : " , true);
+                builder.setTimestamp(user.getCreationTime());
                 builder.setColor(Color.yellow);
 
                 channel.sendMessage(builder.build()).queue();

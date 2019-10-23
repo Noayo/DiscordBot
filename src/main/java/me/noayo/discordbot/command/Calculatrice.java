@@ -1,4 +1,4 @@
-package me.yoann56100.discordbot.command;
+package me.noayo.discordbot.command;
 
 import java.util.Scanner;
 
